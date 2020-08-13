@@ -29,7 +29,7 @@ hello.o: hello.c
 	$(CC) $(CFLAGS) -c hello.c
 
 
-# Compilation for int Print 
+# Compilation for printing int and hex 
 # Command: make specifiers
 specifiers: specifiers.o
 	$(CC) $(CFLAGS) -o specifiers specifiers.o
@@ -38,9 +38,17 @@ specifiers.o: specifiers.c
 	$(CC) $(CFLAGS) -c specifiers.c
 
 
+# Compilation for printing Hello World with a string specifier
+# Command: make specifiers
+helloSpec: helloSpec.o
+	$(CC) $(CFLAGS) -o helloSpec helloSpec.o
+
+helloSpec.o: helloSpec.c
+	$(CC) $(CFLAGS) -c helloSpec.c
+
 # Make all 
-all: nothing hello specifiers
+all: nothing hello specifiers helloSpec
 	
 # Make clean 
 clean:
-	rm -rf *.o *.swp nothing hello specifiers                                             
+	rm -rf *.o *.swp nothing hello specifiers helloSpec                                            

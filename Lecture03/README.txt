@@ -31,5 +31,14 @@ Slides: 13-17
 
 This file shows the students an introduction to C output specifiers
 
+-------------------------------------------------
+Command 4 - make helloSpec
+
+Files: helloSpec.cpp
+
+Slides: 13-17
+
+This file shows the students that a string may be used as an output specifier
+
 
 
