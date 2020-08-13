@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for Lecture 2
+# This is the Makefile for Lecture 3
 
 # CC is for the gcc compiler for C 
 CC := gcc
@@ -30,17 +30,17 @@ hello.o: hello.c
 
 
 # Compilation for int Print 
-# Command: make intPrint
-intPrint: intPrint.o
-	$(CC) $(CFLAGS) -o intPrint intPrint.o
+# Command: make specifiers
+specifiers: specifiers.o
+	$(CC) $(CFLAGS) -o specifiers specifiers.o
 
-intPrint.o: intPrint.c
-	$(CC) $(CFLAGS) -c intPrint.c
+specifiers.o: specifiers.c
+	$(CC) $(CFLAGS) -c specifiers.c
 
 
 # Make all 
-all: nothing hello intPrint
+all: nothing hello specifiers
 	
 # Make clean 
 clean:
-	rm -rf *.o *.swp nothing hello intPrint                                             
+	rm -rf *.o *.swp nothing hello specifiers                                             
