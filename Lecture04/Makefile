@@ -108,14 +108,43 @@ switchFloat: switchFloat.o
 
 switchFloat.o: switchFloat.c 
 	$(CC) $(CFLAGS) -c switchFloat.c
+	
+	
+	
+# factInt shows factorial with an integer
+# Command: make factInt 
+factInt: factInt.o 
+	$(CC) $(CFLAGS) -o factInt factInt.o
+
+factInt.o: factInt.c 
+	$(CC) $(CFLAGS) -c factInt.c
+	
+	
+	
+# factInt shows factorial with a float
+# Command: make factInt 
+factFloat: factFloat.o 
+	$(CC) $(CFLAGS) -o factFloat factFloat.o
+
+factFloat.o: factFloat.c 
+	$(CC) $(CFLAGS) -c factFloat.c
+
+
+# factInt shows factorial with a double
+# Command: make factInt 
+factDouble: factDouble.o 
+	$(CC) $(CFLAGS) -o factDouble factDouble.o
+
+factDouble.o: factDouble.c 
+	$(CC) $(CFLAGS) -c factDouble.c
 
 
 # Make all - switchFloat not included in make all because the compilation will stop
-all: ifEx ifElseEx switchInt switchUnInt switchFixInt switchChar switchLongInt unintNull unintNullFix
+all: ifEx ifElseEx switchInt switchUnInt switchFixInt switchChar switchUnChar switchLongInt unintNull unintNullFix factInt factFloat factDouble
 
 # Make clean
 clean :
-	rm -rf *.o ifEx ifElseEx switchInt switchUnInt switchFixInt switchChar switchLongInt switchFloat unintNull unintNullFix
+	rm -rf *.o ifEx ifElseEx switchInt switchUnInt switchFixInt switchChar switchUnChar switchLongInt switchFloat unintNull unintNullFix factInt factFloat factDouble
 
 
 
