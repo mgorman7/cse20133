@@ -7,13 +7,6 @@
 **********************************************/
 #include "stdio.h"
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 
 	float x = (float)1.1, y = (float)1.1;
