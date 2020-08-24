@@ -67,9 +67,46 @@ times.o: times.c
 	$(CC) $(CFLAGS) -c times.c
 
 
+
+# Defining an array procedurally
+# Command: make arrayProc
+arrayProc: arrayProc.o 
+	$(CC) $(CFLAGS) -o arrayProc arrayProc.o
+
+arrayProc.o: arrayProc.c 
+	$(CC) $(CFLAGS) -c arrayProc.c
+
+
+# Defining an array procedurally - Deliberate compiler error
+# Command: make arrayProcBad
+arrayProcBad: arrayProcBad.o 
+	$(CC) $(CFLAGS) -o arrayProcBad arrayProcBad.o
+
+arrayProcBad.o: arrayProcBad.c 
+	$(CC) $(CFLAGS) -c arrayProcBad.c
+	
+	
+# Defining an array procedurally - Using compiler directives
+# Command: make arrayProcFix
+arrayProcFix: arrayProcFix.o 
+	$(CC) $(CFLAGS) -o arrayProcFix arrayProcFix.o
+
+arrayProcFix.o: arrayProcFix.c 
+	$(CC) $(CFLAGS) -c arrayProcFix.c
+	
+	
+# Defining a multidimensional array procedurally
+# Command: make multiProc
+multiProc: multiProc.o 
+	$(CC) $(CFLAGS) -o multiProc multiProc.o
+
+multiProc.o: multiProc.c 
+	$(CC) $(CFLAGS) -c multiProc.c	
+	
+
 # Make all
-all: arrayIntro multiDim arrayDire arrayAddr sizeOf times
+all: arrayIntro multiDim arrayDire arrayAddr sizeOf times arrayProc arrayProcFix multiProc
 
 # Make clean
 clean :
-	rm -rf *.o arrayIntro multiDim arrayDire arrayAddr sizeOf times
+	rm -rf *.o arrayIntro multiDim arrayDire arrayAddr sizeOf times arrayProc arrayProcBad arrayProcFix multiProc
