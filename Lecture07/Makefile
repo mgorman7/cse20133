@@ -49,6 +49,26 @@ arrayAddr.o: arrayAddr.c
 	$(CC) $(CFLAGS) -c arrayAddr.c
 
 
+
+# Printing the address of array elements
+# Command: make arrayAddrChar
+arrayAddrChar: arrayAddrChar.o 
+	$(CC) $(CFLAGS) -o arrayAddrChar arrayAddrChar.o
+
+arrayAddrChar.o: arrayAddrChar.c 
+	$(CC) $(CFLAGS) -c arrayAddrChar.c
+	
+	
+	
+# Printing the address of array elements
+# Command: make arrayAddrDbl
+arrayAddrDbl: arrayAddrDbl.o 
+	$(CC) $(CFLAGS) -o arrayAddrDbl arrayAddrDbl.o
+
+arrayAddrDbl.o: arrayAddrDbl.c 
+	$(CC) $(CFLAGS) -c arrayAddrDbl.c
+	
+
 # Printing the sizes of data elements
 # Command: make sizeOf
 sizeOf: sizeOf.o 
@@ -105,8 +125,8 @@ multiProc.o: multiProc.c
 	
 
 # Make all
-all: arrayIntro multiDim arrayDire arrayAddr sizeOf times arrayProc arrayProcFix multiProc
+all: arrayIntro multiDim arrayDire arrayAddr arrayAddrChar arrayAddrDbl sizeOf times arrayProc arrayProcFix multiProc
 
 # Make clean
 clean :
-	rm -rf *.o arrayIntro multiDim arrayDire arrayAddr sizeOf times arrayProc arrayProcBad arrayProcFix multiProc
+	rm -rf *.o arrayIntro multiDim arrayDire arrayAddr arrayAddrChar arrayAddrDbl sizeOf times arrayProc arrayProcBad arrayProcFix multiProc
