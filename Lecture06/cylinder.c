@@ -5,19 +5,10 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Calculates the area of a Cylinder */
-double cylArea( double radius, double height, double PI ){
-	
-	return 2 * PI * radius * (radius + height);
-	
-}
+/* Function Declarations */
+double cylArea( double radius, double height, double PI );
 
-/* Calculates the area of a Cylinder */
-double cylVol( double radius, double height, double PI ){
-	
-	return 2 * PI * pow( radius, 2 ) * height;
-	
-}
+double cylVol( double radius, double height, double PI );
 
 int main()
 {
@@ -33,8 +24,22 @@ int main()
 	double volume = cylVol( radius, height, PI );
 
 	/* Prints the value, exponential, and IEEE 754 Hex */
-	fprintf( stdout, "Cyclinder Volume = %.3lf, %e, %a\n", volume, volume, volume );
+	fprintf( stdout, "Cyclinder Volume = %.3lf, %.4e, %a\n", volume, volume, volume );
 
 	
     return 0;
+}
+
+/* Calculates the area of a Cylinder */
+double cylArea( double radius, double height, double PI ){
+	
+	return 2 * PI * radius * (radius + height);
+	
+}
+
+/* Calculates the area of a Cylinder */
+double cylVol( double radius, double height, double PI ){
+	
+	return 2 * PI * pow( radius, 2 ) * height;
+	
 }

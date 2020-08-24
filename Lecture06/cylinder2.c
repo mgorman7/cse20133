@@ -1,12 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Calculates the area of a Cylinder */
-double cylArea( double radius, double height, double PI ){
-	
-	return 2 * PI * radius * (radius + height);
-	
-}
+/* Function Declarations */
+double cylArea( double radius, double height, double PI );
 
 int main()
 {
@@ -22,4 +18,11 @@ int main()
 	fprintf( stdout, "Cyclinder Area = %lf\n", cylArea( radius, height, PI ) );
 	
     return 0;
+}
+
+/* Calculates the area of a Cylinder */
+double cylArea( double radius, double height, double PI ){
+	
+	return 2 * PI * radius * (radius + height);
+	
 }

@@ -8,7 +8,7 @@ int main()
 	double height = 1.73; 
 	double PI = 3.141592;
 	
-	fprintf( stdout, "Radius = %lf, height = %lf, PI = %lf\n", radius, height, PI );
+	fprintf( stdout, "Radius = %.0lf, height = %.2lf, PI = %lf\n", radius, height, PI );
 	
     return 0;
 }

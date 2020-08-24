@@ -49,18 +49,9 @@ cylinder.o: cylinder.c
 	$(CC) $(CFLAGS) -c cylinder.c
 
 
-# Example of a Lab02 Solution  
-# Command: make Lab02
-Lab02: Lab02.o 
-	$(CC) $(CFLAGS) -o Lab02 Lab02.o
-
-Lab02.o: Lab02.c 
-	$(CC) $(CFLAGS) -c Lab02.c	
-
-
 # Make all
-all: cylinder Lab02
+all: cylinder cylinder2 cylinder3
 
 # Make clean
 clean :
-	rm -rf *.o cylinder1 cylinder2 cylinder Lab02
+	rm -rf *.o cylinder1 cylinder2 cylinder3 cylinder
