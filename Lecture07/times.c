@@ -4,6 +4,7 @@
 
 int main ( ) 
 {
+	
    int i, j, table[SIZE][SIZE];
 
    /* Fill table with the products of the indices */

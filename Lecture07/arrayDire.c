@@ -9,7 +9,6 @@ int main()
      for (i = 0; i < 5; i++)
      {
 		 // Common Error Here - i does not increment
-		 // Results in segmentation fault
           for( j = 0; i < 7; j++ ){
               
               sample[i][j] = i * j;
@@ -24,3 +23,4 @@ int main()
 
     return 0;
 }
+

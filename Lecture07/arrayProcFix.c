@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define arrayLen 5
+#define arrayLen 5	// Note how compiler directives do not have commas
 
 int main(){
     
-	/* C does not allow variables to used to declare array lengths */
+	/* Permissible becaue arrayLen is a directive, not a variable */
     int array[arrayLen] = {22, 47, -101, 92, 8};
     
     for(unsigned int iter = 0; iter < arrayLen; iter++){
