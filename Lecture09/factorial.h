@@ -50,5 +50,4 @@ float factFloat(int num);
 ********************************************/
 double factDouble(int num);
 
-
 #endif

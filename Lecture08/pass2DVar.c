@@ -22,24 +22,6 @@ int main ( )
    return 0;
 }
 
-
-/* Function definitions */
-void  FillArray  (int rows, int cols, int array[][cols])
-{
-  int i, j;
-
-  /* Assign each element the value of the
-  product of the two indices */
-  for (i = 0; i < rows; i++)
-  {
-     for (j = 0; j < cols; j++)
-     {
-        array[i][j] = i * j + 2;
-     }
-  }
-}
-
-
 /* Find the Mean of the Values */
 float FindMean (int rows, int cols, int array[rows][cols])
 {
@@ -62,6 +44,23 @@ float FindMean (int rows, int cols, int array[rows][cols])
   mean = total/(float)num;
 
   return mean;
+}
+
+
+/* Function definitions */
+void  FillArray  (int rows, int cols, int array[][cols])
+{
+  int i, j;
+
+  /* Assign each element the value of the
+  product of the two indices */
+  for (i = 0; i < rows; i++)
+  {
+     for (j = 0; j < cols; j++)
+     {
+        array[i][j] = i * j + 2;
+     }
+  }
 }
 
 /* Print Array */

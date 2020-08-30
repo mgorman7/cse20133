@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define NRDAYS 7
+
 /* Function Declarations */
 void printSales( int sales[ ], long unsigned int nrElements );
 int AddSales (int sales[ ], long unsigned int nrElements);
@@ -21,11 +23,13 @@ int main ( )
 	return 0;
 }
 
+/* Function Definitions */
 void printSales( int sales[ ], long unsigned int nrElements ){
 	
    fprintf(stdout, "\n");
-   for (long unsigned int day = 0; day < nrElements; day++)
-   {
+   
+   for (long unsigned int day = 0; day < nrElements; day++){
+	   
       fprintf(stdout, "Sales for day %lu: %d\n", day + 1, sales[day]);
    }	
 	

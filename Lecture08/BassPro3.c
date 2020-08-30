@@ -21,6 +21,7 @@ int main ( )
 	return 0;
 }
 
+/* Function Definitions */
 void printSales( int sales[ ], int nrElements ){
 	
    fprintf(stdout, "\n");
