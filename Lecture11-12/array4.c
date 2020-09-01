@@ -10,21 +10,14 @@
 * Lecture 02 - Slide 38
 **********************************************/
 
-#include <iostream>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
 	long unsigned int numCharacters = 13;
 	
-	char* hello = new char[numCharacters];
+	char hello[numCharacters];
 	char* reference = hello;
 	
 	hello[0] = 'H';
@@ -43,13 +36,11 @@ int main(void){
 	
 	for(long unsigned int iter = 0; iter < numCharacters; iter++){
 		
-		std::cout << (void *)reference << " " << *(reference) << " " << (void *)(hello + iter) << " " << hello[iter] << std::endl;
-		
+		fprintf( stdout, "%p %c %p %c\n", (void *)reference, *(reference), (void *)&hello[iter], hello[iter] );
+				
 		reference = reference + 1;
 		
 	}
-	
-	delete hello;
 
 	return 0;
 }

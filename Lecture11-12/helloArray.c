@@ -12,20 +12,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
 	long unsigned int numCharacters = 13;
 	
-	char* hello = (char *)malloc( numCharacters * sizeof(char) );
-	char* reference = hello;
+	char hello[numCharacters];
 	
 	hello[0] = 'H';
 	hello[1] = 'e';
@@ -43,12 +34,9 @@ int main(void){
 	
 	for(long unsigned int iter = 0; iter < numCharacters; iter++){
 		
-		fprintf( stdout, "%c", *(reference) );
+		fprintf( stdout, "%c", hello[iter] );
 		
-		reference = reference + 1;
 	}
-	
-	free( hello );
 
 	return 0;
 }

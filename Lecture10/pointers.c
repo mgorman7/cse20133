@@ -32,9 +32,7 @@ int main(){
 	fprintf( stdout, "&x = %p, &y = %p\n", (void *)&x, (void *)&y);
 	fprintf( stdout, "Location of p1 is %p, Location of p2 is %p\n", (void *)&p1, (void *)&p2);
 	fprintf( stdout, "Value in p1 is %p, Value in p2 is %p\n", (void *)p1, (void *)p2);
-	fprintf( stdout, "*p1 = %d, *p2 = %d\n", *p1, *p2);
-	fprintf( stdout, "Notice how p1's value is equal to &x, and p2's value = &y\n");
-	fprintf( stdout, "Notice how *p1's value is equal to x, and *p2's value = y\n\n");
+	fprintf( stdout, "*p1 = %d, *p2 = %d\n\n", *p1, *p2);
 
 
 	p1 = p2;       /* Let the variable p1 now hold */ 
@@ -45,9 +43,8 @@ int main(){
 	fprintf( stdout, "&x = %p, &y = %p\n", (void *)&x, (void *)&y);
 	fprintf( stdout, "Location of p1 is %p, Location of p2 is %p\n", (void *)&p1, (void *)&p2);
 	fprintf( stdout, "Value in p1 is %p, Value in p2 is %p\n", (void *)p1, (void *)p2);
-	fprintf( stdout, "*p1 = %d, *p2 = %d\n", *p1, *p2);
-	fprintf( stdout, "Notice how p1's value is equal to &x, and p2's value = &y\n");
-	fprintf( stdout, "Notice how *p1's value is equal to x, and *p2's value = y\n\n");
+	fprintf( stdout, "*p1 = %d, *p2 = %d\n\n", *p1, *p2);
+
 
 	p1 = &x;       /* p1 holds the address of x    */
 	
@@ -56,9 +53,8 @@ int main(){
 	fprintf( stdout, "&x = %p, &y = %p\n", (void *)&x, (void *)&y);
 	fprintf( stdout, "Location of p1 is %p, Location of p2 is %p\n", (void *)&p1, (void *)&p2);
 	fprintf( stdout, "Value in p1 is %p, Value in p2 is %p\n", (void *)p1, (void *)p2);
-	fprintf( stdout, "*p1 = %d, *p2 = %d\n", *p1, *p2);
-	fprintf( stdout, "Notice how p1's value is equal to &x, and p2's value = &y\n");
-	fprintf( stdout, "Notice how *p1's value is equal to x, and *p2's value = y\n\n");
+	fprintf( stdout, "*p1 = %d, *p2 = %d\n\n", *p1, *p2);
+
 	   
 	*p1 = *p2;     /* Put the value found at the   */
 				   /* address that p2 points to    */
@@ -70,9 +66,8 @@ int main(){
 	fprintf( stdout, "&x = %p, &y = %p\n", (void *)&x, (void *)&y);
 	fprintf( stdout, "Location of p1 is %p, Location of p2 is %p\n", (void *)&p1, (void *)&p2);
 	fprintf( stdout, "Value in p1 is %p, Value in p2 is %p\n", (void *)p1, (void *)p2);
-	fprintf( stdout, "*p1 = %d, *p2 = %d\n", *p1, *p2);
-	fprintf( stdout, "Notice how p1's value is equal to &x, and p2's value = &y\n");
-	fprintf( stdout, "Notice how *p1's value is equal to x, and *p2's value = y\n\n");
+	fprintf( stdout, "*p1 = %d, *p2 = %d\n\n", *p1, *p2);
+
 				
 	return 0;
 

@@ -1,12 +1,12 @@
 /**********************************************
-* File: void1.cpp
+* File: array1.c
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
 * This is a basic program to show students how to 
-* allocate a void pointer and print its address
+* allocate a char array and print its address
 *
-* Lecture 02 - Part 1 - Slide 10
+* Lecture 02 - Part 1 - Slides 25
 **********************************************/
 
 #include <stdio.h>
@@ -16,12 +16,9 @@ int main(void){
 	
 	long unsigned int numCharacters = 13;
 	
-	void* hello = malloc( numCharacters * sizeof(char) );
+	char hello[numCharacters];
 	
-	fprintf( stdout, "%p\n", (void *)hello );;
-	
-	free( hello );
+	fprintf( stdout, "%p\n", (void *)hello);
 
 	return 0;
 }
-

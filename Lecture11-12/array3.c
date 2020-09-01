@@ -1,16 +1,18 @@
 /**********************************************
-* File: array1.cpp
+* File: array3.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
 * This is a basic program to show students how to 
-* allocate a char array and print its address
+* allocate a char array, set the first two
+* bytes equal to characters, and then print their address
+* and values
 *
-* Lecture 02 - Part 1 - Slides 25
+* Lecture 02 - - Slide 35
 **********************************************/
 
-#include <iostream>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 /********************************************
 * Function Name  : main
@@ -23,11 +25,15 @@ int main(void){
 	
 	long unsigned int numCharacters = 13;
 	
-	char* hello = new char[numCharacters];
+	char hello[numCharacters];
+	char* reference = hello;
 	
-	std::cout << (void *)hello << std::endl;
+	*(reference) = 'H';
+	reference = reference + 1;
+	*(reference) = 'e';
 	
-	free( hello );
-
+	fprintf( stdout, "%p %c\n", (void *)hello, hello[0] );
+	fprintf( stdout, "%p %c\n", (void *)reference, *(reference) );
+	
 	return 0;
 }

@@ -1,34 +1,27 @@
 /**********************************************
-* File: char2.cpp
+* File: void2.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
 * This is a basic program to show students how to 
-* allocate a char pointer and memory and print all the addresses
+* allocate a void pointer and print all the addresses
 * of the location of the characters
 *
-* Lecture 02 - Slide 29
+* Lecture 02 - Slides 27-28
 **********************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
 	long unsigned int numCharacters = 13;
 	
-	char* hello = (char *)malloc( numCharacters * sizeof(char) );
+	void* hello = malloc( numCharacters * sizeof(char) );
 	
 	for(long unsigned int iter = 0; iter < numCharacters; iter++){
 	
-		fprintf( stdout, "%p\n", (void *)(hello + iter) );
+		fprintf( stdout, "%p\n", (void *)((char *)hello + iter*sizeof(char)) );
 	
 	}
 	

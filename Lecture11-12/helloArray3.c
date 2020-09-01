@@ -13,18 +13,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
-	char* hello = "Hello, World\n";
-	
-	fprintf( stdout, "%s", hello );
+	fprintf( stdout, "Hello, World\n" );
 
 	return 0;
 }
