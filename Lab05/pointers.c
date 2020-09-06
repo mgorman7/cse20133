@@ -16,6 +16,7 @@ void ScanCoordinates(int* xPtr, int* yPtr)
     *             Step 1              * 
     ***********************************/
 
+
 }
 
 
