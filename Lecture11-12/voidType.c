@@ -14,19 +14,15 @@
 
 int main(void){
 	
-	long unsigned int numCharacters = 13;
-	
-	char* hello = (char *)malloc( numCharacters * sizeof(char) );
+	long unsigned int arraySize = 13;
+	void* hello = malloc( arraySize * sizeof( char ) );
 	
 	fprintf( stdout, "%p\n", (void *)hello );
-	
-	for( long unsigned int iter = 0; iter < numCharacters; ++iter ){
-		
-		fprintf( stdout, "%p '%c'\n", (void *)( hello + iter ), *(hello + iter) );
-	}
-	
-	free( hello );
 
 	return 0;
 }
+
+
+
+
 

@@ -24,8 +24,8 @@ int main(void){
 	reference = (char *)reference + sizeof(char);
 	*((char *)(reference)) = 101;
 	
-	fprintf( stdout, "%p %c\n", (void *)hello, *((char *)(hello)));
-	fprintf( stdout, "%p %c\n", (void *)reference, *((char *)(reference)) );
+	fprintf( stdout, "%p %c\n", (void *)hello, *((char *)hello + 1));
+	fprintf( stdout, "%p %c\n", (void *)reference, *((char *)reference - 1));
 	
 	free( hello );
 

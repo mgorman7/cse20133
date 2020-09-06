@@ -272,8 +272,41 @@ hello.o: hello.c
 	$(CC) $(CFLAGS) -c hello.c
 
 
+# Void Type
+voidTypeObjs :=  voidType.o
+
+voidType: $(voidTypeObjs)
+	$(CC) $(CFLAGS) -o voidType $(voidTypeObjs)
+	./voidType
+
+voidType.o: voidType.c
+	$(CC) $(CFLAGS) -c voidType.c
+
+
+# Char Type
+charTypeObjs :=  charType.o
+
+charType: $(charTypeObjs)
+	$(CC) $(CFLAGS) -o charType $(charTypeObjs)
+	./charType
+
+charType.o: charType.c
+	$(CC) $(CFLAGS) -c charType.c
+	
+	
+# Array Type
+arrayTypeObjs :=  arrayType.o
+
+arrayType: $(arrayTypeObjs)
+	$(CC) $(CFLAGS) -o arrayType $(arrayTypeObjs)
+	./arrayType
+
+arrayType.o: arrayType.c
+	$(CC) $(CFLAGS) -c arrayType.c
+
+
 # Make all (intPtrBad not include because of deliberate compiler errors) 
-all: charEx intPtr malloc mallocBad mallocGood mallAbst void1 void2 void3 void4 helloVoid char1 char2 char3 char4 helloChar array1 array2 array3 array4 helloArray helloArray2 helloArray3 hello
+all: malloc mallocBad mallocGood mallAbst void1 void2 void3 void4 helloVoid char1 char2 char3 char4 helloChar array1 array2 array3 array4 helloArray helloArray2 helloArray3
 
 # Make clean
 clean :
