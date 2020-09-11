@@ -103,6 +103,15 @@ swapArray2.o: swapArray2.c
 	$(CC) $(CFLAGS) -c swapArray2.c
 
 
+# Initial Example of Pointer to Pointers
+# Command: make passBy
+passBy: passBy.o 
+	$(CC) $(CFLAGS) -o passBy passBy.o
+
+passBy.o: passBy.c 
+	$(CC) $(CFLAGS) -c passBy.c
+	
+
 # Make all
 all: squareFunc factRecurse factOverflow goodCompOrder badCompOrderFix factFuncEx swapArray
 

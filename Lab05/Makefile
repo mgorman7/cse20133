@@ -9,7 +9,7 @@ CFLAGS := -std=c11 $(FLAGS)
 
 # Lab 05
 # Command: make Lab05
-Lab05Objs := Lab05.o
+Lab05Objs := Lab05.o pointers.o
 
 Lab05: $(Lab05Objs)
 	$(CC) $(CFLAGS) -o Lab05 $(Lab05Objs)

@@ -68,9 +68,38 @@ charPtr2PtrBad.o: charPtr2PtrBad.c
 	$(CC) $(CFLAGS) -c charPtr2PtrBad.c
 
 
+# Matrix Multiplication
+# Command: make matrixMul
+matrixMul: matrixMul.o 
+	$(CC) $(CFLAGS) -o matrixMul matrixMul.o
+
+matrixMul.o: matrixMul.c 
+	$(CC) $(CFLAGS) -c matrixMul.c
+
+
+
+# Matrix Multiplication - Bad Allocation
+# Command: make matrixMulBad
+matrixMulBad: matrixMulBad.o 
+	$(CC) $(CFLAGS) -o matrixMulBad matrixMulBad.o
+
+matrixMulBad.o: matrixMulBad.c 
+	$(CC) $(CFLAGS) -c matrixMulBad.c
+
+	
+
+# Initial Example of Pointer to Pointers
+# Command: make passBy
+passBy: passBy.o 
+	$(CC) $(CFLAGS) -o passBy passBy.o
+
+passBy.o: passBy.c 
+	$(CC) $(CFLAGS) -c passBy.c
+
+
 # Make all
-all: ptr2Ptr charProc1 charProc2 charProc charPtr2Ptr
+all: ptr2Ptr charProc1 charProc2 charProc charPtr2Ptr matrixMul matrixMulBad
 
 # Make clean
 clean :
-	rm -rf *.o ptr2Ptr charProc1 charProc2 charProc charPtr2Ptr
+	rm -rf *.o ptr2Ptr charProc1 charProc2 charProc charPtr2Ptr charPtr2PtrBad matrixMul matrixMulBad

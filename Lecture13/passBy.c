@@ -16,7 +16,7 @@ int main(void){
 	
 	long unsigned int wordSize = 5;
 
-	char* Notre = malloc(wordSize * sizeof(char));
+	char* Notre = (char *)malloc(wordSize * sizeof(char));
 	
 	Notre[0] = 'N'; Notre[1] = 'o'; Notre[2] = 't'; Notre[3] = 'r'; Notre[4] = 'e'; 
 	
@@ -40,7 +40,7 @@ void getLetter(char* word, long unsigned int wordSize, char findChar, int* currL
 		if(word[i] == findChar){
 			
 			*currLetter = (int)i;
-			
+		
 			return;
 		}
 	}
