@@ -54,7 +54,7 @@ double factorialDbl(unsigned int i){
 		return 1;
 	}
 
-	return i * factorialDbl( i-1 );
+	return (double)i * factorialDbl( i-1 );
 }
 
 
