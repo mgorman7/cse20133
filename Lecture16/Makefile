@@ -21,9 +21,6 @@ factUInt: $(factUIntObjs)
 
 factUInt.o: factUInt.c Recurse.h
 	$(CC) $(CFLAGS) -c factUInt.c
-	
-Recurse.o: Recurse.c Recurse.h
-	$(CC) $(CFLAGS) -c Recurse.c
 
 
 
@@ -97,7 +94,7 @@ fib.o: fib.c
 
 # Exponential using recursion
 # Command: make fibMemo
-fibMemoObjs := fibMemo.o
+fibMemoObjs := fibMemo.o Recurse.o
 
 fibMemo: $(fibMemoObjs)
 	$(CC) $(CFLAGS) -o fibMemo $(fibMemoObjs)
@@ -105,7 +102,8 @@ fibMemo: $(fibMemoObjs)
 fibMemo.o: fibMemo.c
 	$(CC) $(CFLAGS) -c fibMemo.c
 
-
+Recurse.o: Recurse.c Recurse.h
+	$(CC) $(CFLAGS) -c Recurse.c
 
 # Make all
 all: factUInt factDbl factDblBad exp expPrecise fib fibMemo
