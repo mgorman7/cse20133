@@ -95,9 +95,21 @@ fib.o: fib.c
 
 
 
+# Exponential using recursion
+# Command: make fibMemo
+fibMemoObjs := fibMemo.o
+
+fibMemo: $(fibMemoObjs)
+	$(CC) $(CFLAGS) -o fibMemo $(fibMemoObjs)
+
+fibMemo.o: fibMemo.c
+	$(CC) $(CFLAGS) -c fibMemo.c
+
+
+
 # Make all
-all: factUInt factDbl factDblBad exp expPrecise fib 
+all: factUInt factDbl factDblBad exp expPrecise fib fibMemo
 
 # Make clean
 clean :
-	rm -rf *.o factUInt factDbl factDblBad exp expPrecise fib
+	rm -rf *.o factUInt factDbl factDblBad exp expPrecise fib fibMemo
