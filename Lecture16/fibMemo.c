@@ -8,6 +8,7 @@
 **********************************************/
 
 #include "Recurse.h"
+#include <stdlib.h>
 
 int main(){
 
