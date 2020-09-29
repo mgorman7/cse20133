@@ -10,13 +10,6 @@
 #include <stdio.h>
 #include <stdlib.h> /* Included for the exit function */
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : int argc, char** argv
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(int argc, char** argv){
 	
 	/* Error Checking */

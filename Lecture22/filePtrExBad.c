@@ -40,7 +40,8 @@ int main(void){
 		fprintf(stderr, "The file %s does not exist\n", file_DNE);
 	}
 
-	fclose(fp1);
+	// Trying to de-allocate a NULL pointer
+	fclose(fpDNE);
 
 	return 0;
 }
