@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20133 course Lecture 25
+# This is the Makefile for the CSE 20133 course Lecture 26
 
 # GCC is for the GCC compiler for C
 CC := gcc
@@ -11,57 +11,8 @@ PP := g++
 
 # CFLAGS are the compiler flages for when we compile C code in this course 
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
-CFLAGS := -std=c11 $(FLAGS)
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
 
-
-
-# Compilation for the Hello, World in C
-# Command: make hello
-helloObjs := hello.o
-
-hello: $(helloObjs)
-	$(CC) $(CFLAGS) -o hello $(helloObjs)
-
-hello.o: hello.c
-	$(CC) $(CFLAGS) -c hello.c
-	
-	
-	
-# Compilation for the Hello, World in C
-# Command: make hello
-helloCPPObjs := helloCPP.o
-
-helloCPP: $(helloCPPObjs)
-	$(PP) $(CXXFLAGS) -o helloCPP $(helloCPPObjs)
-
-helloCPP.o: helloCPP.cpp
-	$(PP) $(CXXFLAGS) -c helloCPP.cpp
-	
-	
-	
-# Examples of outputting C++ values
-# Command: make output
-outputObjs := output.o
-
-output: $(outputObjs)
-	$(PP) $(CXXFLAGS) -o output $(outputObjs)
-
-output.o: output.cpp
-	$(PP) $(CXXFLAGS) -c output.cpp
-
-
-
-# Examples of outputting C++ values
-# Command: make output
-ptrObjs := ptr.o
-
-ptr: $(ptrObjs)
-	$(PP) $(CXXFLAGS) -o ptr $(ptrObjs)
-
-ptr.o: ptr.cpp
-	$(PP) $(CXXFLAGS) -c ptr.cpp
-	
 	
 	
 # Examples of using const
@@ -101,9 +52,22 @@ cinStr.o: cinStr.cpp
 	$(PP) $(CXXFLAGS) -c cinStr.cpp
 
 
+
+# Examples of vector
+# Command: make vector
+vectorObjs := vector.o
+
+vector: $(vectorObjs)
+	$(PP) $(CXXFLAGS) -o vector $(vectorObjs)
+
+vector.o: vector.cpp
+	$(PP) $(CXXFLAGS) -c vector.cpp
+
+
+
 # Make all
-all: hello helloCPP output ptr const cin cinStr
+all: const cin cinStr vector
 
 # Make clean
 clean :
-	rm -rf *.o hello helloCPP output ptr const cin cinStr
+	rm -rf *.o const cin cinStr vector
