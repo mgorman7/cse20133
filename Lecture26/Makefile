@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20133 course Lecture 26
+# This is the Makefile for the CSE 20133 course Lecture 25
 
 # GCC is for the GCC compiler for C
 CC := gcc
@@ -11,86 +11,99 @@ PP := g++
 
 # CFLAGS are the compiler flages for when we compile C code in this course 
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
+CFLAGS := -std=c11 $(FLAGS)
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
 
 
 
-# Simple Example of Function Overloading
-# Command: make funcOver
-funcOverObjs := funcOver.o
+# Compilation for the Hello, World in C
+# Command: make hello
+helloObjs := hello.o
 
-funcOver: $(funcOverObjs)
-	$(PP) $(CXXFLAGS) -o funcOver $(funcOverObjs)
+hello: $(helloObjs)
+	$(CC) $(CFLAGS) -o hello $(helloObjs)
 
-funcOver.o: funcOver.cpp
-	$(PP) $(CXXFLAGS) -c funcOver.cpp
+hello.o: hello.c
+	$(CC) $(CFLAGS) -c hello.c
+	
+	
+	
+# Compilation for the Hello, World in C
+# Command: make hello
+helloCPPObjs := helloCPP.o
+
+helloCPP: $(helloCPPObjs)
+	$(PP) $(CXXFLAGS) -o helloCPP $(helloCPPObjs)
+
+helloCPP.o: helloCPP.cpp
+	$(PP) $(CXXFLAGS) -c helloCPP.cpp
+	
+	
+	
+# Examples of outputting C++ values
+# Command: make output
+outputObjs := output.o
+
+output: $(outputObjs)
+	$(PP) $(CXXFLAGS) -o output $(outputObjs)
+
+output.o: output.cpp
+	$(PP) $(CXXFLAGS) -c output.cpp
 
 
+
+# Examples of outputting C++ values
+# Command: make output
+ptrObjs := ptr.o
+
+ptr: $(ptrObjs)
+	$(PP) $(CXXFLAGS) -o ptr $(ptrObjs)
+
+ptr.o: ptr.cpp
+	$(PP) $(CXXFLAGS) -c ptr.cpp
+	
+	
+	
+# Examples of using const
+# Command: make output
+constObjs := const.o constFunc.o
+
+const: $(constObjs)
+	$(PP) $(CXXFLAGS) -o const $(constObjs)
+
+const.o: const.cpp constFunc.h 
+	$(PP) $(CXXFLAGS) -c const.cpp
+	
+constFunc.o: constFunc.cpp constFunc.h 
+	$(PP) $(CXXFLAGS) -c constFunc.cpp
+
+
+# Examples of cin
+# Command: make cin
+cinObjs := cin.o
+
+cin: $(cinObjs)
+	$(PP) $(CXXFLAGS) -o cin $(cinObjs)
+
+cin.o: cin.cpp
+	$(PP) $(CXXFLAGS) -c cin.cpp
+	
+	
+	
 # Examples of cin with strings
-# Command: make cinFuncOver
-cinFuncOverObjs := cinFuncOver.o
+# Command: make cinStr
+cinStrObjs := cinStr.o
 
-cinFuncOver: $(cinFuncOverObjs)
-	$(PP) $(CXXFLAGS) -o cinFuncOver $(cinFuncOverObjs)
+cinStr: $(cinStrObjs)
+	$(PP) $(CXXFLAGS) -o cinStr $(cinStrObjs)
 
-cinFuncOver.o: cinFuncOver.cpp
-	$(PP) $(CXXFLAGS) -c cinFuncOver.cpp
-	
-	
-	
-# Example of ambiguous overloading
-# Contains a deliberate compiler error 
-# Not included in make all
-# Command: make ambig
-ambigObjs := ambig.o
-
-ambig: $(ambigObjs)
-	$(PP) $(CXXFLAGS) -o ambig $(ambigObjs)
-
-ambig.o: ambig.cpp
-	$(PP) $(CXXFLAGS) -c ambig.cpp
-	
-	
-	
-# Initial Example of Templates 
-# Command: make template
-templateObjs := template.o
-
-template: $(templateObjs)
-	$(PP) $(CXXFLAGS) -o template $(templateObjs)
-
-template.o: template.cpp
-	$(PP) $(CXXFLAGS) -c template.cpp
-	
-	
-
-# Initial Example of Templates 
-# included in a Header File
-# Command: make tempHead
-tempHeadObjs := tempHead.o
-
-tempHead: $(tempHeadObjs)
-	$(PP) $(CXXFLAGS) -o tempHead $(tempHeadObjs)
-
-tempHead.o: tempHead.cpp tempHead.h
-	$(PP) $(CXXFLAGS) -c tempHead.cpp
-	
-	
-	
-# Initial Example of Vectors 
-# Command: make vector
-vectorObjs := vector.o
-
-vector: $(vectorObjs)
-	$(PP) $(CXXFLAGS) -o vector $(vectorObjs)
-
-vector.o: vector.cpp
-	$(PP) $(CXXFLAGS) -c vector.cpp
+cinStr.o: cinStr.cpp
+	$(PP) $(CXXFLAGS) -c cinStr.cpp
 
 
 # Make all
-all: funcOver cinFuncOver template tempHead vector
+all: hello helloCPP output ptr const cin cinStr
 
 # Make clean
 clean :
-	rm -rf *.o funcOver cinFuncOver template tempHead vector
+	rm -rf *.o hello helloCPP output ptr const cin cinStr

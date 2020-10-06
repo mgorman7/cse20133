@@ -23,8 +23,8 @@ helloObjs := hello.o
 hello: $(helloObjs)
 	$(CC) $(CFLAGS) -o hello $(helloObjs)
 
-hello.o: $(07)/hello.c
-	$(CC) $(CFLAGS) -c $(07)/hello.c
+hello.o: hello.c
+	$(CC) $(CFLAGS) -c hello.c
 	
 	
 	
