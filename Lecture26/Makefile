@@ -53,6 +53,18 @@ cinStr.o: cinStr.cpp
 
 
 
+# Examples of template
+# Command: make cinStr
+templateObjs := template.o
+
+template: $(templateObjs)
+	$(PP) $(CXXFLAGS) -o template $(templateObjs)
+
+template.o: template.cpp
+	$(PP) $(CXXFLAGS) -c template.cpp
+	
+
+
 # Examples of vector
 # Command: make vector
 vectorObjs := vector.o
@@ -66,8 +78,8 @@ vector.o: vector.cpp
 
 
 # Make all
-all: const cin cinStr vector
+all: const cin cinStr vector template
 
 # Make clean
 clean :
-	rm -rf *.o const cin cinStr vector
+	rm -rf *.o const cin cinStr vector template

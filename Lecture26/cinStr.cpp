@@ -21,7 +21,7 @@
 * Returns false if any character other than 0-9
 * '.', or '-' appears in the string
 ********************************************/
-bool noBadChars(std::string testString){
+bool noBadChars(std::string& testString){
 	
 	unsigned int i;
 	for(i = 0; i < testString.length(); i++){

@@ -17,7 +17,7 @@ CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
 	
 # Examples of std::string and std::vector
 # Command: make output
-Lab08Objs := Lab08.o
+Lab08Objs := Lab08.o palindrome.o
 
 Lab08: $(Lab08Objs)
 	$(PP) $(CXXFLAGS) -o Lab08 $(Lab08Objs)
@@ -25,6 +25,8 @@ Lab08: $(Lab08Objs)
 Lab08.o: Lab08.cpp
 	$(PP) $(CXXFLAGS) -c Lab08.cpp
 
+palindrome.o: palindrome.cpp palindrome.h
+	$(PP) $(CXXFLAGS) -c palindrome.cpp
 
 
 # Make all

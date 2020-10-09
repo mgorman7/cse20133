@@ -6,15 +6,18 @@
 
 int main ( )
 {
+   
+   /* Declare a Vector of strings */
+   
+   
+   /* Obtain a long unsigned integer of tests */
+   
 
-   /* declare vectors */
+   /* Get the strings to test */
+   
 
-   /* prompt user and input sentence */
-
-   /* reverse the sentence */
-
-   /* compare the vectors and output results */
-
+   /* Test all the strings in the vector */
+   
 
    return 0;
 }
