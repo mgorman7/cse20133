@@ -1,4 +1,4 @@
-# Author: Matthew Morrison
+# Author: Matt Morrison
 # E-mail: matt.morrison@nd.edu
 #
 # This is the Makefile for the CSE 20133 course Lecture 27 - Lab 08
