@@ -29,10 +29,10 @@ void PrintInt (int i) {
 * 
 * Overloaded Function the Prints an integer 
 ********************************************/
-void PrintInt (int& i) {
+/* void PrintInt (int& i) {
    i = i + 2;
    std::cout << i << std::endl;
-}
+} */
 
 
 /********************************************
