@@ -36,5 +36,4 @@ class line{
 	
 };
 
-
 #endif

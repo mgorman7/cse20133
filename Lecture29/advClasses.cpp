@@ -17,7 +17,7 @@
 ********************************************/
 int main(){
 
-	point point1;  /* Poorly Designed Constructor Call */
+	point point1;
 	
 	std::cout << "point1 is " << point1 << std::endl << std::endl;
 	

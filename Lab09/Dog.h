@@ -37,7 +37,7 @@ class Dog {
 		void SetOwner( const std::string& newOwner );
 		
 		// Print the Dog's Information
-		void printDogInfo() const;
+		friend std::ostream& operator<<( std::ostream& out, const Dog& printDog );
 
 };
 
