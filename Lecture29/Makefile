@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20133 course Lecture 26
+# This is the Makefile for the CSE 20133 course Lecture 29
 
 # GCC is for the GCC compiler for C
 CC := gcc
@@ -13,84 +13,44 @@ PP := g++
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
 
+	
+	
+# Command: make advClass
+# Advanced Classes with const
+advClassesObjs :=  advClasses.o line.o point.o
 
+advClasses: $(advClassesObjs)
+	$(PP) $(CXXFLAGS) -o advClasses $(advClassesObjs)
 
-# Simple Example of Function Overloading
-# Command: make funcOver
-funcOverObjs := funcOver.o
+advClasses.o: advClasses.cpp line.h
+	$(PP) $(CXXFLAGS) -c advClasses.cpp
 
-funcOver: $(funcOverObjs)
-	$(PP) $(CXXFLAGS) -o funcOver $(funcOverObjs)
+line.o: line.cpp line.h
+	$(PP) $(CXXFLAGS) -c line.cpp
 
-funcOver.o: funcOver.cpp
-	$(PP) $(CXXFLAGS) -c funcOver.cpp
-
-
-# Examples of cin with strings
-# Command: make cinFuncOver
-cinFuncOverObjs := cinFuncOver.o
-
-cinFuncOver: $(cinFuncOverObjs)
-	$(PP) $(CXXFLAGS) -o cinFuncOver $(cinFuncOverObjs)
-
-cinFuncOver.o: cinFuncOver.cpp
-	$(PP) $(CXXFLAGS) -c cinFuncOver.cpp
+point.o: point.cpp point.h
+	$(PP) $(CXXFLAGS) -c point.cpp
 	
 	
 	
-# Example of ambiguous overloading
-# Contains a deliberate compiler error 
-# Not included in make all
-# Command: make ambig
-ambigObjs := ambig.o
+# Command: make ComplexTest
+# Example of Overloaded Operators
+ComplexTestObjs :=  ComplexTest.o Complex.o
 
-ambig: $(ambigObjs)
-	$(PP) $(CXXFLAGS) -o ambig $(ambigObjs)
+ComplexTest: $(ComplexTestObjs)
+	$(PP) $(CXXFLAGS) -o ComplexTest $(ComplexTestObjs)
 
-ambig.o: ambig.cpp
-	$(PP) $(CXXFLAGS) -c ambig.cpp
-	
-	
-	
-# Initial Example of Templates 
-# Command: make template
-templateObjs := template.o
+ComplexTest.o: ComplexTest.cpp Complex.h
+	$(PP) $(CXXFLAGS) -c ComplexTest.cpp
 
-template: $(templateObjs)
-	$(PP) $(CXXFLAGS) -o template $(templateObjs)
+Complex.o: Complex.cpp Complex.h
+	$(PP) $(CXXFLAGS) -c Complex.cpp
 
-template.o: template.cpp
-	$(PP) $(CXXFLAGS) -c template.cpp
-	
-	
-
-# Initial Example of Templates 
-# included in a Header File
-# Command: make tempHead
-tempHeadObjs := tempHead.o
-
-tempHead: $(tempHeadObjs)
-	$(PP) $(CXXFLAGS) -o tempHead $(tempHeadObjs)
-
-tempHead.o: tempHead.cpp tempHead.h
-	$(PP) $(CXXFLAGS) -c tempHead.cpp
-	
-	
-	
-# Initial Example of Vectors 
-# Command: make vector
-vectorObjs := vector.o
-
-vector: $(vectorObjs)
-	$(PP) $(CXXFLAGS) -o vector $(vectorObjs)
-
-vector.o: vector.cpp
-	$(PP) $(CXXFLAGS) -c vector.cpp
 
 
 # Make all
-all: funcOver cinFuncOver template tempHead vector
+all: advClasses ComplexTest
 
 # Make clean
 clean :
-	rm -rf *.o funcOver cinFuncOver template tempHead vector
+	rm -rf *.o advClasses ComplexTest
