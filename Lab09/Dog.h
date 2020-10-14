@@ -19,7 +19,7 @@ class Dog {
 		// Dog's Age
 		unsigned int Age;
 
-		// Happiness rating from Pat() and Abuse()
+		// Happiness rating from Pat() and HoursAwayFromHome()
 		int Happiness;
 	
 	public:
