@@ -36,6 +36,7 @@ int main()
 	std::cout << c1 << " " << c2 << std::endl;
 	
 	Complex c5;
+	std::cout << "Enter real and imaginary: ";
 	std::cin >> c5;
 	
 	std::cout << c5 << std::endl;
