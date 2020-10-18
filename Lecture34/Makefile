@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20312 - Lecture 13
+# This is the Makefile for the CSE 20312 - Lecture 34
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -10,38 +10,65 @@ PP := g++
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
 
-# Variables for Folders
-INC := include
-SRC := src
-OBJ := obj
-EXE := exe
 
 
-# Command: make SLLTest
-SLLTestObjs := $(OBJ)/SLLTest.o
+# Command: make IrishTest
+# Base class for First Inheritance Example
+IrishTestObjs := IrishTest.o Irish.o 
 
-SLLTest: $(SLLTestObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/SLLTest $(SLLTestObjs)
+IrishTest: $(IrishTestObjs)
+	$(PP) $(CXXFLAGS) -o IrishTest $(IrishTestObjs)
+	./IrishTest
 
-$(OBJ)/SLLTest.o: $(SRC)/SLLTest.cpp $(INC)/SLList.h
-	$(PP) $(CXXFLAGS) -c $(SRC)/SLLTest.cpp -o $@
+IrishTest.o: IrishTest.cpp Irish.h
+	$(PP) $(CXXFLAGS) -c IrishTest.cpp -o $@
+
+Irish.o: Irish.cpp Irish.h
+	$(PP) $(CXXFLAGS) -c Irish.cpp -o $@
 
 
 
-# Command: make SLLTest2
-SLLTest2Objs := $(OBJ)/SLLTest2.o
+# Command: make Inherit 
+# Derived Classes for First Inheritance Example 
+InheritObjs := Inherit.o Faculty.o Student.o Irish.o
 
-SLLTest2: $(SLLTest2Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/SLLTest2 $(SLLTest2Objs)
-	$(EXE)/./SLLTest2
+Inherit: $(InheritObjs)
+	$(PP) $(CXXFLAGS) -o Inherit $(InheritObjs)
+	./Inherit
 
-$(OBJ)/SLLTest2.o: $(SRC)/SLLTest2.cpp $(INC)/SLList.h
-	$(PP) $(CXXFLAGS) -c $(SRC)/SLLTest2.cpp -o $@
+# Inherit.cpp class both derived classes
+Inherit.o: Inherit.cpp Student.h Faculty.h
+	$(PP) $(CXXFLAGS) -c Inherit.cpp -o $@
 
+# Faculty inherits Irish
+Faculty.o: Faculty.cpp Faculty.h Irish.h
+	$(PP) $(CXXFLAGS) -c Faculty.cpp -o $@
+
+# Student inherits Irish
+Student.o: Student.cpp Student.h Irish.h
+	$(PP) $(CXXFLAGS) -c Student.cpp -o $@
+
+# Irish.o is already created in the Base Class
+	
+
+
+# Command: make Inherit2
+# Example of this object in Inheritance Example 
+Inherit2Objs := Inherit2.o Faculty.o Student.o Irish.o
+
+Inherit2: $(Inherit2Objs)
+	$(PP) $(CXXFLAGS) -o Inherit2 $(Inherit2Objs)
+	./Inherit2
+
+# Inherit.cpp class both derived classes
+Inherit2.o: Inherit2.cpp Student.h Faculty.h
+	$(PP) $(CXXFLAGS) -c Inherit2.cpp -o $@
+
+# Irish.o, Student.o, and Faculty.o are already created in make Inherit
 	
 
 # Make all
-all: countSort1 countSort1
+all: IrishTest Inherit Inherit2
 
 
 # make initialize
@@ -52,4 +79,4 @@ initialize:
 
 # Make clean
 clean :
-	rm -rf *.o $(OBJ)/* $(EXE)/*
+	rm -rf *.o IrishTest Inherit Inherit2
