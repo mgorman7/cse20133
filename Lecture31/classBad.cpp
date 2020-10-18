@@ -1,4 +1,4 @@
-#include "A.h"
+#include "Abad.h"
 
 int main()  { 
 
@@ -13,13 +13,10 @@ int main()  {
    if(a == b){
 	   std::cout << "a == b" << std::endl;
    }
-
    
    c.setX(31); 
    c.setY( (float)18.231 );
-   std::cout << "c: " << c << std::endl; 
+   std::cout << "c: " << c << std::endl;  
    
    return 0; 
 } 
-
-

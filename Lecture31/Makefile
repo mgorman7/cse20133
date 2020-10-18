@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20133 course Lecture 26
+# This is the Makefile for the CSE 20133 course Lecture 31
 
 # GCC is for the GCC compiler for C
 CC := gcc
@@ -11,86 +11,130 @@ PP := g++
 
 # CFLAGS are the compiler flages for when we compile C code in this course 
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
-CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
+CFLAGS := -std=c11 $(FLAGS)
+CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS) 
 
 
-
-# Simple Example of Function Overloading
-# Command: make funcOver
-funcOverObjs := funcOver.o
-
-funcOver: $(funcOverObjs)
-	$(PP) $(CXXFLAGS) -o funcOver $(funcOverObjs)
-
-funcOver.o: funcOver.cpp
-	$(PP) $(CXXFLAGS) -c funcOver.cpp
-
-
-# Examples of cin with strings
-# Command: make cinFuncOver
-cinFuncOverObjs := cinFuncOver.o
-
-cinFuncOver: $(cinFuncOverObjs)
-	$(PP) $(CXXFLAGS) -o cinFuncOver $(cinFuncOverObjs)
-
-cinFuncOver.o: cinFuncOver.cpp
-	$(PP) $(CXXFLAGS) -c cinFuncOver.cpp
-	
-	
-	
-# Example of ambiguous overloading
-# Contains a deliberate compiler error 
-# Not included in make all
-# Command: make ambig
-ambigObjs := ambig.o
-
-ambig: $(ambigObjs)
-	$(PP) $(CXXFLAGS) -o ambig $(ambigObjs)
-
-ambig.o: ambig.cpp
-	$(PP) $(CXXFLAGS) -c ambig.cpp
-	
-	
-	
-# Initial Example of Templates 
 # Command: make template
-templateObjs := template.o
+# Initial Class Template Example
+templateObjs :=  template.o
 
 template: $(templateObjs)
 	$(PP) $(CXXFLAGS) -o template $(templateObjs)
 
-template.o: template.cpp
+template.o: template.cpp A.h
 	$(PP) $(CXXFLAGS) -c template.cpp
+
+
+
+# Command: make classBad
+# Example of incorrect template with cpp file
+# Deliberate Compiler Error
+classBadObjs :=  classBad.o Abad.o
+
+classBad: $(classBadObjs)
+	$(PP) $(CXXFLAGS) -o classBad $(classBadObjs)
+
+classBad.o: classBad.cpp Abad.h
+	$(PP) $(CXXFLAGS) -c classBad.cpp
+	
+Abad.o: Abad.cpp Abad.h
+	$(PP) $(CXXFLAGS) -c Abad.cpp
+
+
+
+# Command: make newInt
+# First Instance of new keyword. Refresh on pointers
+newIntObjs :=  newInt.o
+
+newInt: $(newIntObjs)
+	$(PP) $(CXXFLAGS) -o newInt $(newIntObjs)
+
+newInt.o: newInt.cpp
+	$(PP) $(CXXFLAGS) -c newInt.cpp
+	
+	
+	
+# Command: make newInt
+# Arrays using new and delete. Refresh on array pointers
+newArrayObjs :=  newArray.o
+
+newArray: $(newArrayObjs)
+	$(PP) $(CXXFLAGS) -o newArray $(newArrayObjs)
+
+newArray.o: newArray.cpp
+	$(PP) $(CXXFLAGS) -c newArray.cpp
 	
 	
 
-# Initial Example of Templates 
-# included in a Header File
-# Command: make tempHead
-tempHeadObjs := tempHead.o
 
-tempHead: $(tempHeadObjs)
-	$(PP) $(CXXFLAGS) -o tempHead $(tempHeadObjs)
+# Command: make tempBad
+# Example of incorrect template overloaded operator
+# Deliberate Compiler Error
+tempBadObjs :=  tempBad.o
 
-tempHead.o: tempHead.cpp tempHead.h
-	$(PP) $(CXXFLAGS) -c tempHead.cpp
+tempBad: $(tempBadObjs)
+	$(PP) $(CXXFLAGS) -o tempBad $(tempBadObjs)
+
+tempBad.o: tempBad.cpp A.h
+	$(PP) $(CXXFLAGS) -c tempBad.cpp
+
+
+
+# Command: make template
+# Initial Class Template Example
+tempDestObjs :=  tempDest.o
+
+tempDest: $(tempDestObjs)
+	$(PP) $(CXXFLAGS) -o tempDest $(tempDestObjs)
+
+tempDest.o: tempDest.cpp A.h
+	$(PP) $(CXXFLAGS) -c tempDest.cpp
+	
+
+
+# namespace Example
+# Command: make namespace
+namespaceObjs :=  namespace.o
+
+namespace: namespace.o
+	$(PP) $(CXXFLAGS) -o namespace $(namespaceObjs)
+	./namespace
+
+namespace.o: namespace.cpp
+	$(PP) $(CXXFLAGS) -c namespace.cpp
 	
 	
 	
-# Initial Example of Vectors 
-# Command: make vector
-vectorObjs := vector.o
+# nameGood Example
+# Command: make nameGood
+nameGoodObjs :=  nameGood.o
 
-vector: $(vectorObjs)
-	$(PP) $(CXXFLAGS) -o vector $(vectorObjs)
+nameGood: nameGood.o
+	$(PP) $(CXXFLAGS) -o nameGood $(nameGoodObjs)
+	./nameGood
 
-vector.o: vector.cpp
-	$(PP) $(CXXFLAGS) -c vector.cpp
+nameGood.o: nameGood.cpp
+	$(PP) $(CXXFLAGS) -c nameGood.cpp
+
+
+
+# nameGood2 Example
+# Command: make nameGood2
+nameGood2Objs :=  nameGood2.o
+
+nameGood2: nameGood2.o
+	$(PP) $(CXXFLAGS) -o nameGood2 $(nameGood2Objs)
+	./nameGood2
+
+nameGood2.o: nameGood2.cpp
+	$(PP) $(CXXFLAGS) -c nameGood2.cpp
+
 
 
 # Make all
-all: funcOver cinFuncOver template tempHead vector
+all: lltest
 
 # Make clean
 clean :
-	rm -rf *.o funcOver cinFuncOver template tempHead vector
+	rm -rf *.o template newInt newArray tempDest lltest

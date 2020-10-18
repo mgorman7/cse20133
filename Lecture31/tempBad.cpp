@@ -10,16 +10,15 @@ int main()  {
    std::cout << "b: " << b << std::endl;  
    std::cout << "c: " << c << std::endl;  
    
-   if(a == b){
-	   std::cout << "a == b" << std::endl;
+   /* Cannot compare since types do not match */
+   if(a == c){
+	   std::cout << "a == c" << std::endl;
    }
-
    
-   c.setX(31); 
-   c.setY( (float)18.231 );
-   std::cout << "c: " << c << std::endl; 
+   b.setX(31); 
+   /* Set will not work since float is not a valid char type */
+   b.setY( (float)18.231 );
+   std::cout << "b: " << b << std::endl;  
    
    return 0; 
 } 
-
-
