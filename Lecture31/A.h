@@ -50,11 +50,13 @@ class A  {
 		}
 		
 		bool operator==(const A& rhs) const{
+			
 			if(this != &rhs){
 				if(x == rhs.x && y == rhs.y)
 					return true;
 				return false;
 			}
+			
 			return true;
 		}
 		

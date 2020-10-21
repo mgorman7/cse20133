@@ -22,7 +22,7 @@ int main(void){
 
 	/* Properly allocate memory */
 	long unsigned int mallocSize = 5;
-	//char *First = malloc(mallocSize * sizeof(char));
+	//char *First = (char *)malloc(mallocSize * sizeof(char));
 	char *First = new char[mallocSize];
 	
 	/* Recall from overloaded operators: address is called by reference */
