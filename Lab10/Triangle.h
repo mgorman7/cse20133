@@ -2,6 +2,8 @@
 #define TRIANGLE_H
 
 #include "Shape.h"
+#include <string>
+#include <cmath>
 
 
 
